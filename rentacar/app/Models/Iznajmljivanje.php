@@ -12,5 +12,17 @@ class Iznajmljivanje extends Model
     protected $fillable = [
         'ocena',
         'body',
+        "automobil_id",
+        "user_id"
     ];
+
+    public function automobil()
+    {
+        return $this->belongsTo(Automobil::class, "automobil_id");
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, "user_id");
+    }
 }

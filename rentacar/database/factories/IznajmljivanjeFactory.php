@@ -17,7 +17,9 @@ class IznajmljivanjeFactory extends Factory
     public function definition()
     {
         return [
-            //
+
+                'ocena' => $this->faker->numberBetween(1, 5),
+                'body' => $this->faker->sentence(20),
         ];
     }
 }

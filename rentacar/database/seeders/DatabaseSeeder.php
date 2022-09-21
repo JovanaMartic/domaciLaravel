@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Automobil;
+use App\Models\Iznajmljivanje;
+use App\Models\User;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,11 +17,28 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+
+        $user1 = User::factory()->create();
+        $user2 = User::factory()->create();
+        
+
+        $automobil1 = Automobil::factory()->create();
+        $automobil2 = Automobil::factory()->create();
+
+
+        Iznajmljivanje::factory(2)->create([
+            'user_id'=>$user1->id,
+            'automobil_id'=>$automobil1->id,
+        ]);
+
+        Iznajmljivanje::factory(1)->create([
+            'user_id'=>$user2->id,
+            'automobil_id'=>$automobil2->id,
+        ]);
+
+
+    
     }
 }
+

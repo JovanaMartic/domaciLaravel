@@ -17,3 +17,4 @@ class IznajmljivanjeSeeder extends Seeder
         //
     }
 }
+

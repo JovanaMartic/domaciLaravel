@@ -17,7 +17,8 @@ class AutomobilFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'model' => $this->faker->sentence(10),
+            'marka' => $this->faker->sentence(10),
         ];
     }
 }

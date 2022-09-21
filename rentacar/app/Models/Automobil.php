@@ -13,4 +13,10 @@ class Automobil extends Model
         'model',
         'marka',
     ];
+
+
+    public function iznajmljivanjes()
+    {
+        return $this->hasMany(Iznajmljivanje::class);
+    }
 }
